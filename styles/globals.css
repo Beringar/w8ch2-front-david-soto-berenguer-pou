@@ -12,6 +12,14 @@ a {
   text-decoration: none;
 }
 
+.nav-link {
+  color: fuchsia;
+}
+
+.nav-link.active {
+  color: yellow;
+}
+
 * {
   box-sizing: border-box;
 }
