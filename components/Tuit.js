@@ -115,7 +115,7 @@ const Tuit = ({ tuit }) => {
           <p>{tuit.text}</p>
           <div className="info">
             <p className="like">{`Likes ${tuit.likes}`}</p>
-            <p>{`${minutesAgo(tuit.date)} minutes ago`}</p>
+            <p>{`${minutesAgo(tuit.date)} ago`}</p>
           </div>
         </li>
       </StyledTuit>
