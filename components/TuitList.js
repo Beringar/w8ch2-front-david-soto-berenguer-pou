@@ -3,7 +3,7 @@ import Tuit from "./Tuit";
 
 const StyledList = styled.div`
   ul {
-    flex-direction: column-reverse;
+    flex-direction: column;
     background-color: #fafafa91;
     border-radius: 33px;
     padding: 30px;
