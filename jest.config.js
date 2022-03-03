@@ -18,6 +18,8 @@ const customJestConfig = {
     "!**/*.d.ts",
     "!**/node_modules/**",
     "!**/coverage/**",
+    "!./**/_app.js",
+
   ],
 };
 
