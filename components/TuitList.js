@@ -20,11 +20,11 @@ const TuitList = ({ tuits }) => {
     <>
       <StyledList>
         <ul>
-          {tuits.reverse().map((tuit) => (
-            <>
-              <Tuit tuit={tuit} />
-            </>
-          ))}
+          {tuits
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
+            .map((tuit) => (
+              <Tuit key={tuit._id} tuit={tuit} />
+            ))}
         </ul>
       </StyledList>
     </>
