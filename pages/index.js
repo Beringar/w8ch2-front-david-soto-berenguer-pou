@@ -1,10 +1,7 @@
 import Head from "next/head";
+import Image from "next/image";
+import TuitList from "../components/TuitList";
 import styles from "../styles/Home.module.css";
-
-const minutesAgo = (date) => {
-  var diff = Math.abs(new Date(date) - Date.now());
-  return Math.floor(diff / 1000 / 60);
-};
 
 const TuitahTimeline = ({ tuits }) => {
   return (
@@ -16,18 +13,11 @@ const TuitahTimeline = ({ tuits }) => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.description}>Tuitah Timeline</h1>
-        <ul>
-          {tuits.reverse().map((tuit) => (
-            <>
-              <li key={tuit._id}>
-                <p>{tuit.text}</p>
-                <p>{`${minutesAgo(tuit.date)} minutes ago`}</p>
-                <p>{`Likes ${tuit.likes}`}</p>
-              </li>
-            </>
-          ))}
-        </ul>
+        <div className={styles.title}>
+          <Image src="/favicon.ico" alt="logo" width={100} height={100}></Image>
+          <h1 className={styles.description}>uitah Timeline</h1>
+        </div>
+        <TuitList tuits={tuits}></TuitList>
       </main>
 
       <footer className={styles.footer}>
@@ -40,7 +30,6 @@ const TuitahTimeline = ({ tuits }) => {
 export const getServerSideProps = async () => {
   const response = await fetch(process.env.NEXT_TUITAH_API_URL);
   const { tuits } = await response.json();
-  console.log(tuits);
   return {
     props: { tuits },
   };
